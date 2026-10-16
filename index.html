@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Learning Hub</title>
+<style>
+:root{--navy:#102139;--blue:#1675dc;--bg:#f3f7fc;--text:#172b45;--muted:#63748b;--line:#e0e8f2;--green:#16a36a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.45 Arial,Helvetica,sans-serif;color:var(--text)}
+.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}.sidebar{background:linear-gradient(180deg,#102139,#0d192a);color:white;padding:24px 16px}.brand{font-size:22px;font-weight:800;margin:0 0 6px}.tagline{font-size:12px;color:#b9c9dc;margin-bottom:30px}.nav a{display:block;color:#dce8f7;text-decoration:none;padding:12px;border-radius:9px;margin:5px 0}.nav a.active,.nav a:hover{background:#176dcc;color:#fff}.sidebar small{display:block;color:#a9bdd5;margin-top:30px;line-height:1.8}.main{padding:28px;min-width:0}.top{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.top h1{font-size:28px;margin:0}.muted{color:var(--muted)}.quote{background:#e7f1ff;border:1px solid #d2e4ff;padding:12px 18px;border-radius:12px;color:#27527e}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:14px;margin:24px 0}.stat,.panel,.platform{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 2px 8px #183b5b08}.stat label{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:26px;margin-top:5px}.panel{margin:16px 0}.panel h2{font-size:18px;margin:0 0 14px}.platforms{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:10px}.platform{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700}.icon{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:#e8f2ff;font-size:18px}.platform span:last-child{font-size:13px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}.toolbar input,.toolbar select,.form input,.form select{border:1px solid #d4dfec;border-radius:8px;padding:10px;background:#fff;color:var(--text)}.toolbar input{flex:1;min-width:170px}.btn{background:var(--blue);color:white;border:0;padding:10px 14px;border-radius:8px;font-weight:700;cursor:pointer}.btn.secondary{background:#eaf2fc;color:#235486}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid #edf1f6;font-size:13px}th{color:#60728a;background:#f8fafd}td a{color:#086fd3;font-weight:700}.badge{display:inline-block;padding:4px 8px;border-radius:6px;background:#fff1c7;color:#8b5b00;font-size:12px}.badge.done{background:#d9f7e9;color:#08784b}.badge.todo{background:#e9eef5;color:#52647b}.progress{width:95px;accent-color:var(--green)}.actions button{margin-right:4px;padding:6px 8px;border:1px solid var(--line);background:#fff;border-radius:6px;cursor:pointer}.bottom{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form input,.form select{width:100%;min-width:0}.form .full{grid-column:1/-1}.hidden{display:none!important}.note{font-size:12px;color:var(--muted);margin-top:10px}
+@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{padding:15px}.nav{display:flex;flex-wrap:wrap}.nav a{padding:8px}.sidebar small{display:none}.main{padding:16px}.stats{grid-template-columns:repeat(2,1fr)}.platforms{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.bottom,.form{grid-template-columns:1fr}.form .full{grid-column:auto}.top h1{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand">🎓 My Learning Hub</div><div class="tagline">All your courses. One place.</div>
+  <nav class="nav">
+    <a class="active" href="#home">⌂ &nbsp; Home</a><a href="#courses">▤ &nbsp; All Courses</a><a href="#platforms">▦ &nbsp; By Platform</a><a href="#progress">↗ &nbsp; My Progress</a><a href="#notes">▧ &nbsp; Notes & Resources</a>
+  </nav>
+  <small>QUICK REMINDER<br>Keep your course links updated.<br>Track your progress weekly.<br><br>✨ Better learning, bigger dreams.</small>
+</aside>
+<main class="main" id="home">
+  <div class="top"><div><h1>Hello, Mamun 👋</h1><div class="muted">Stay focused. Keep learning. Build your future.</div></div><div class="quote">“Small steps every day lead to big results.”</div></div>
+  <section class="stats">
+    <div class="stat"><label>Total Courses</label><strong id="total">0</strong><span class="muted">Saved in your hub</span></div>
+    <div class="stat"><label>Completed</label><strong id="completed">0</strong><span class="muted">Courses finished</span></div>
+    <div class="stat"><label>In Progress</label><strong id="ongoing">0</strong><span class="muted">Currently studying</span></div>
+    <div class="stat"><label>Not Started</label><strong id="pending">0</strong><span class="muted">Ready when you are</span></div>
+  </section>
+  <section class="panel" id="platforms"><h2>🔗 Quick Access by Platform</h2><div class="platforms">
+    <a class="platform" href="https://web.whatsapp.com/" target="_blank" rel="noopener"><span class="icon">🟢</span><span>WhatsApp<br><small>Open WhatsApp Web</small></span></a>
+    <a class="platform" href="https://web.telegram.org/" target="_blank" rel="noopener"><span class="icon">✈️</span><span>Telegram<br><small>Open Telegram Web</small></span></a>
+    <a class="platform" href="https://www.google.com/" target="_blank" rel="noopener"><span class="icon">🌐</span><span>Website<br><small>Open course sites</small></span></a>
+    <a class="platform" href="https://www.facebook.com/" target="_blank" rel="noopener"><span class="icon">🔵</span><span>Facebook<br><small>Open Facebook</small></span></a>
+    <a class="platform" href="#courses"><span class="icon">📱</span><span>Mobile Apps<br><small>See saved courses</small></span></a>
+  </div></section>
+  <section class="panel" id="courses"><h2>📚 All Courses</h2>
+    <div class="toolbar"><input id="search" placeholder="Search course name or category…"><select id="filter"><option value="">All platforms</option><option>WhatsApp</option><option>Telegram</option><option>Website</option><option>Facebook</option><option>Mobile App</option><option>Other</option></select><button class="btn" id="showForm">+ Add Course</button></div>
+    <div id="addArea" class="panel hidden"><h2>Add a course</h2><form id="courseForm" class="form">
+      <input id="name" placeholder="Course name (required)" required><input id="category" placeholder="Category e.g. Banking, English">
+      <select id="platform"><option>WhatsApp</option><option>Telegram</option><option>Website</option><option>Facebook</option><option>Mobile App</option><option>Other</option></select><input id="url" type="url" placeholder="Course/group link (https://…)" required>
+      <select id="status"><option value="Not Started">Not Started</option><option value="In Progress">In Progress</option><option value="Completed">Completed</option></select><input id="pct" type="number" min="0" max="100" value="0" placeholder="Progress %">
+      <button class="btn" type="submit">Save Course</button><button class="btn secondary" type="button" id="cancelForm">Cancel</button>
+    </form><div class="note">Tip: use the invitation/course link supplied by the platform. Never save your password here.</div></div>
+    <div class="tablewrap"><table><thead><tr><th>#</th><th>Course Name</th><th>Category</th><th>Platform</th><th>Link</th><th>Progress</th><th>Status</th><th>Actions</th></tr></thead><tbody id="courseRows"></tbody></table></div>
+    <div id="empty" class="muted">No courses added yet. Click “Add Course” to start building your hub.</div>
+    <div class="note">Your course list is saved in this browser on this laptop. Use Export Backup regularly so you don't lose it.</div>
+  </section>
+  <section class="bottom">
+    <div class="panel" id="progress"><h2>🎯 My Progress</h2><p id="summary" class="muted">Add courses to see your progress.</p><button class="btn secondary" id="export">Export Backup (JSON)</button> <label class="btn secondary" for="importFile" style="display:inline-block;cursor:pointer">Import Backup</label><input id="importFile" class="hidden" type="file" accept=".json,application/json"></div>
+    <div class="panel" id="notes"><h2>📝 Notes & Resources</h2><textarea id="notesText" style="width:100%;min-height:100px;border:1px solid #d4dfec;border-radius:8px;padding:10px" placeholder="Write reminders, useful links, or what to study next…"></textarea><button class="btn secondary" id="saveNotes" style="margin-top:8px">Save Notes</button><span id="noteMsg" class="muted"></span></div>
+  </section>
+</main>
+</div>
+<script>
+const KEY='myLearningHubCourses_v1', NOTES='myLearningHubNotes_v1';
+let courses=[];
+try{courses=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){courses=[]}
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem(KEY,JSON.stringify(courses));render()}
+function render(){
+ const q=$('search').value.toLowerCase(),f=$('filter').value;
+ const filtered=courses.filter(c=>(!q||(c.name+' '+c.category+' '+c.platform).toLowerCase().includes(q))&&(!f||c.platform===f));
+ $('courseRows').innerHTML=filtered.map((c,i)=>{const real=courses.indexOf(c);const status=c.status||'Not Started';return `<tr><td>${real+1}</td><td><strong>${esc(c.name)}</strong></td><td>${esc(c.category||'—')}</td><td>${esc(c.platform)}</td><td><a href="${safeUrl(c.url)}" target="_blank" rel="noopener">Open ↗</a></td><td><input class="progress" aria-label="Progress" type="range" min="0" max="100" value="${Number(c.pct)||0}" onchange="setProgress(${real},this.value)"> ${Number(c.pct)||0}%</td><td><span class="badge ${status==='Completed'?'done':status==='Not Started'?'todo':''}">${esc(status)}</span></td><td class="actions"><button onclick="editCourse(${real})" title="Edit">✎</button><button onclick="deleteCourse(${real})" title="Delete">×</button></td></tr>`}).join('');
+ $('empty').style.display=filtered.length?'none':'block';
+ $('total').textContent=courses.length;$('completed').textContent=courses.filter(c=>c.status==='Completed').length;$('ongoing').textContent=courses.filter(c=>c.status==='In Progress').length;$('pending').textContent=courses.filter(c=>c.status==='Not Started').length;
+ const avg=courses.length?Math.round(courses.reduce((s,c)=>s+(Number(c.pct)||0),0)/courses.length):0;
+ $('summary').textContent=courses.length?`Average course progress: ${avg}%. You have completed ${courses.filter(c=>c.status==='Completed').length} of ${courses.length} courses.`:'Add courses to see your progress.';
+}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function safeUrl(s){try{let u=new URL(s);return ['http:','https:'].includes(u.protocol)?u.href:'#'}catch(e){return '#'}}
+$('showForm').onclick=()=>{$('addArea').classList.remove('hidden');$('name').focus()};
+$('cancelForm').onclick=()=>{$('addArea').classList.add('hidden');$('courseForm').reset();$('pct').value=0};
+$('courseForm').onsubmit=e=>{e.preventDefault();const status=$('status').value;let pct=Math.max(0,Math.min(100,Number($('pct').value)||0));if(status==='Completed')pct=100;courses.push({name:$('name').value.trim(),category:$('category').value.trim(),platform:$('platform').value,url:$('url').value.trim(),status,pct});save();$('courseForm').reset();$('pct').value=0;$('addArea').classList.add('hidden')};
+window.setProgress=(i,val)=>{courses[i].pct=Number(val);if(Number(val)===100)courses[i].status='Completed';else if(Number(val)>0&&courses[i].status==='Not Started')courses[i].status='In Progress';save()};
+window.deleteCourse=i=>{if(confirm('Delete this course from your dashboard?')){courses.splice(i,1);save()}};
+window.editCourse=i=>{const c=courses[i];const name=prompt('Course name:',c.name);if(name===null)return;const url=prompt('Course URL:',c.url);if(url===null)return;const category=prompt('Category:',c.category||'');if(category===null)return;const pct=prompt('Progress from 0 to 100:',c.pct||0);if(pct===null)return;c.name=name.trim()||c.name;c.url=url.trim()||c.url;c.category=category.trim();c.pct=Math.max(0,Math.min(100,Number(pct)||0));c.status=c.pct===100?'Completed':c.pct===0?'Not Started':'In Progress';save()};
+$('search').oninput=render;$('filter').onchange=render;
+$('export').onclick=()=>{const blob=new Blob([JSON.stringify({courses,notes:$('notesText').value},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='my-learning-hub-backup.json';a.click();URL.revokeObjectURL(a.href)};
+$('importFile').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const d=JSON.parse(await file.text());if(!Array.isArray(d.courses))throw Error();if(confirm('Import backup and replace the current course list?')){courses=d.courses;save();$('notesText').value=d.notes||'';localStorage.setItem(NOTES,$('notesText').value)}}catch(err){alert('Could not read this backup file.')}e.target.value=''};
+$('notesText').value=localStorage.getItem(NOTES)||'';$('saveNotes').onclick=()=>{localStorage.setItem(NOTES,$('notesText').value);$('noteMsg').textContent=' Saved!';setTimeout(()=>$('noteMsg').textContent='',1800)};
+render();
+</script>
+</body></html>
